@@ -56,3 +56,6 @@ Open log_query_webui.html in a browser to use the UI version:
 -> # Config 
 ->OUTPUT_DIR = r"C:\\Users\\Palla\\aimlmcpser\\logs"
 -> sample log is provided
+
+-> For Command Line
+![image](https://github.com/user-attachments/assets/7fb6266a-69d3-46c8-8c84-a372a15ab7fe)
