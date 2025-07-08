@@ -51,3 +51,8 @@ Open log_query_webui.html in a browser to use the UI version:
 ->View the AI verdict in a styled terminal-like interface.
 ->This frontend talks directly to http://localhost:8000 (make sure MCP is running).
 
+📁 Logs
+->There is log generator script  log_generator.py
+-> # Config 
+->OUTPUT_DIR = r"C:\\Users\\Palla\\aimlmcpser\\logs"
+-> sample log is provided
