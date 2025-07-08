@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>SOC Log WebUI</title>
+  <style>
+    body { font-family: monospace, Arial; margin: 40px; background-color: #f3f4f6; }
+    h2 { color: #003366; }
+    form, .section { background: white; padding: 20px; border-radius: 8px; margin-top: 20px; box-shadow: 0 0 8px rgba(0,0,0,0.1); }
+    input, button, select { padding: 10px; margin: 5px 0; width: 100%; max-width: 400px; }
+    textarea, pre { width: 100%; height: 500px; white-space: pre-wrap; overflow: auto; font-size: 14px; line-height: 1.4; background-color: #111; color: #0f0; padding: 10px; border: none; border-radius: 5px; }
+    label { font-weight: bold; }
+    #log-select-list option { font-family: monospace; }
+  </style>
+</head>
+<body>
+  <h2>🛡️ SOC Log Analyzer WebUI (Like CLI)</h2>
+
+  <form id="logQueryForm">
+    <label for="hostname">🔎 Hostname</label>
+    <input type="text" id="hostname" name="hostname" placeholder="e.g. LTZ555555">
+
+    <label for="cid">🆔 CID</label>
+    <input type="text" id="cid" name="cid" placeholder="e.g. 0388b0190df248a390a5f9a5706531a0">
+
+    <label for="timestamp">⏰ Timestamp</label>
+    <input type="text" id="timestamp" name="timestamp" placeholder="e.g. 2025-07-03T04:29:52.342627+00:00">
+
+    <button type="submit">Search Logs</button>
+  </form>
+
+  <div class="section" id="resultSection" style="display:none">
+    <h3>📁 Matching Log Files</h3>
+    <label for="log-select-list">📂 Select file to analyze:</label>
+    <select id="log-select-list"></select>
+    <button onclick="analyzeLog()">🔍 Analyze</button>
+  </div>
+
+  <div class="section" id="verdictSection" style="display:none">
+    <h3>🧠 AI Verdict</h3>
+    <pre id="verdictOutput"></pre>
+  </div>
+
+  <script>
+    const serverUrl = "http://localhost:8000";
+
+    document.getElementById("logQueryForm").addEventListener("submit", async function (e) {
+      e.preventDefault();
+      document.getElementById("verdictSection").style.display = "none";
+
+      const hostname = document.getElementById("hostname").value.trim();
+      const cid = document.getElementById("cid").value.trim();
+      const timestamp = document.getElementById("timestamp").value.trim();
+
+      const res = await fetch(`${serverUrl}/query`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ hostname, cid, timestamp })
+      });
+
+      const data = await res.json();
+      const matches = data.matches || [];
+
+      const select = document.getElementById("log-select-list");
+      select.innerHTML = "";
+      if (matches.length === 0) {
+        select.innerHTML = `<option>No matches found</option>`;
+        return;
+      }
+
+      matches.forEach((item, index) => {
+        const option = document.createElement("option");
+        option.value = item.file;
+        option.innerText = `${index + 1}. ${item.file} | Hostname: ${item.log.device?.hostname || "Unknown"}`;
+        select.appendChild(option);
+      });
+
+      document.getElementById("resultSection").style.display = "block";
+    });
+
+    async function analyzeLog() {
+      const file = document.getElementById("log-select-list").value;
+      document.getElementById("verdictOutput").textContent = "🚀 Sending log to MCP for analysis... Please wait...";
+      document.getElementById("verdictSection").style.display = "block";
+
+      const res = await fetch(`${serverUrl}/analyze`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ file })
+      });
+
+      const data = await res.json();
+      document.getElementById("verdictOutput").textContent = data.verdict || "❌ No response or failed to analyze.";
+    }
+  </script>
+</body>
+</html>
