@@ -1,0 +1,332 @@
+[
+  {
+    "cid": "0388b0190df248a390a5f9a5706531a0",
+    "created_timestamp": "2025-07-03T04:29:52.342627+00:00",
+    "detection_id": "ldt:c1c3824e10994e9ba0e869ed6ba1ada2:601307860240",
+    "device": {
+      "device_id": "097829a0949e471e800b0bb534d2b618",
+      "cid": "b177cc0fb81c440b94aeb58e2d8c6017",
+      "agent_load_flags": "1",
+      "agent_local_time": "2025-07-03T04:29:52.342627+00:00",
+      "agent_version": "7.24.19607.0",
+      "bios_manufacturer": "Dell Inc.",
+      "bios_version": "1.7.1",
+      "config_id_base": "65994767",
+      "config_id_build": "19607",
+      "config_id_platform": "3",
+      "external_ip": "125.21.240.2",
+      "hostname": "CORP-PC01",
+      "first_seen": "2025-07-03T04:29:52.342627+00:00",
+      "last_login_timestamp": "2025-07-03T04:29:52.342627+00:00",
+      "last_login_user": "user1",
+      "last_seen": "2025-07-03T04:29:52.342627+00:00",
+      "local_ip": "192.168.1.81",
+      "mac_address": "e0:9e:78:21:bd:64",
+      "machine_domain": "india.xyz.abc",
+      "major_version": "10",
+      "minor_version": "0",
+      "os_version": "Windows 11",
+      "ou": [
+        "Computers1"
+      ],
+      "platform_id": "0",
+      "platform_name": "Windows",
+      "product_type": "1",
+      "product_type_desc": "Workstation",
+      "site_name": "Noida",
+      "status": "normal",
+      "system_manufacturer": "Dell Inc.",
+      "system_product_name": "Latitude 3400",
+      "groups": [
+        "983cb46d54424f819ce384a17a45ae15"
+      ],
+      "modified_timestamp": "2025-07-03T04:29:52.343974+00:00"
+    },
+    "behaviors": [
+      {
+        "device_id": "8887bad1e6b0428e92185f445826da34",
+        "timestamp": "2025-07-03T04:29:52.343974+00:00",
+        "template_instance_id": "98",
+        "behavior_id": "41004",
+        "filename": "wpscloudsvr.exe",
+        "filepath": "C:\\Program Files\\wpscloudsvr.exe",
+        "alleged_filetype": "exe",
+        "cmdline": "C:\\Program Files\\wpscloudsvr.exe /run",
+        "scenario": "suspicious_activity",
+        "objective": "Falcon Detection Method",
+        "tactic": "Custom Intelligence",
+        "tactic_id": "CSTA0005",
+        "technique": "Indicator of Attack",
+        "technique_id": "CST0004",
+        "display_name": "CustomIOAWinLowest",
+        "description": "A process triggered an informational severity custom rule.",
+        "severity": 7,
+        "confidence": 90,
+        "ioc_type": "hash_sha256",
+        "ioc_value": "88014dec2803494096e20d6591809099",
+        "ioc_source": "library_load",
+        "ioc_description": "Suspicious execution of wpscloudsvr.exe",
+        "user_name": "user1",
+        "user_id": "S-1-5-5988001761",
+        "control_graph_id": "ctg:56d56684f18d48729995546bf60fd540:601307860240",
+        "triggering_process_graph_id": "pid:2038ede8cc264e2f997a4a53a18fbf0e:1514294312009",
+        "sha256": "5c067cb450b44bf1bfc4d50a4126b2a4",
+        "md5": "73521aaca2a043b597f3542433642b25",
+        "parent_details": {
+          "parent_sha256": "ca6672f66d4840ddb1ffa14c62515fbb",
+          "parent_md5": "cd0f574938194c9280099241c1470a51",
+          "parent_cmdline": "svchost.exe -k netsvcs",
+          "parent_process_graph_id": "pid:56fb9d1103cc483580272c4d1ac0891f:1881173559796"
+        },
+        "pattern_disposition": 2048,
+        "pattern_disposition_details": {
+          "process_blocked": true,
+          "operation_blocked": false,
+          "quarantine_file": false
+        },
+        "rule_instance_id": "98",
+        "rule_instance_version": 3
+      }
+    ],
+    "email_sent": false,
+    "first_behavior": "2025-07-03T04:29:52.343974+00:00",
+    "last_behavior": "2025-07-03T04:29:52.343974+00:00",
+    "max_confidence": 100,
+    "max_severity": 10,
+    "max_severity_displayname": "Informational",
+    "show_in_ui": true,
+    "status": "new",
+    "hostinfo": {
+      "active_directory_dn_display": [
+        "Computers1"
+      ],
+      "domain": ""
+    },
+    "seconds_to_triaged": 0,
+    "seconds_to_resolved": 0,
+    "behaviors_processed": [
+      "pid:9af93307f7ab4c179b2fa70c83367e21:1540089488739:41004"
+    ],
+    "date_updated": "2025-07-03T04:29:52.343974+00:00"
+  },
+  {
+    "cid": "d4f1b300fdf7477592154a19142e92f3",
+    "created_timestamp": "2025-07-03T04:29:52.343974+00:00",
+    "detection_id": "ldt:92046e87bce8443d82c1720045767b29:601307860240",
+    "device": {
+      "device_id": "a0515d0f566e40eaabd2e2f09113616f",
+      "cid": "10c1aab83e574622a9aa7e170bbb8175",
+      "agent_load_flags": "1",
+      "agent_local_time": "2025-07-03T04:29:52.343974+00:00",
+      "agent_version": "7.24.19607.0",
+      "bios_manufacturer": "Dell Inc.",
+      "bios_version": "1.7.1",
+      "config_id_base": "65994767",
+      "config_id_build": "19607",
+      "config_id_platform": "3",
+      "external_ip": "125.21.240.2",
+      "hostname": "CORP-PC01",
+      "first_seen": "2025-07-03T04:29:52.343974+00:00",
+      "last_login_timestamp": "2025-07-03T04:29:52.343974+00:00",
+      "last_login_user": "user1",
+      "last_seen": "2025-07-03T04:29:52.343974+00:00",
+      "local_ip": "192.168.1.112",
+      "mac_address": "e8:94:0d:81:5f:2d",
+      "machine_domain": "india.xyz.abc",
+      "major_version": "10",
+      "minor_version": "0",
+      "os_version": "Windows 11",
+      "ou": [
+        "Computers1"
+      ],
+      "platform_id": "0",
+      "platform_name": "Windows",
+      "product_type": "1",
+      "product_type_desc": "Workstation",
+      "site_name": "Noida",
+      "status": "normal",
+      "system_manufacturer": "Dell Inc.",
+      "system_product_name": "Latitude 3400",
+      "groups": [
+        "68c30b2ea2034769aa6627b30e38bb6f"
+      ],
+      "modified_timestamp": "2025-07-03T04:29:52.343974+00:00"
+    },
+    "behaviors": [
+      {
+        "device_id": "ed937f7b35084e61a5a66003b6849ffb",
+        "timestamp": "2025-07-03T04:29:52.343974+00:00",
+        "template_instance_id": "98",
+        "behavior_id": "41004",
+        "filename": "rundll32.exe",
+        "filepath": "C:\\Program Files\\rundll32.exe",
+        "alleged_filetype": "exe",
+        "cmdline": "C:\\Program Files\\rundll32.exe /run",
+        "scenario": "suspicious_activity",
+        "objective": "Falcon Detection Method",
+        "tactic": "Custom Intelligence",
+        "tactic_id": "CSTA0005",
+        "technique": "Indicator of Attack",
+        "technique_id": "CST0004",
+        "display_name": "CustomIOAWinLowest",
+        "description": "A process triggered an informational severity custom rule.",
+        "severity": 8,
+        "confidence": 100,
+        "ioc_type": "hash_sha256",
+        "ioc_value": "d3900bdc48b44d31b501f2de61510e3c",
+        "ioc_source": "library_load",
+        "ioc_description": "Suspicious execution of rundll32.exe",
+        "user_name": "user1",
+        "user_id": "S-1-5-7884806475",
+        "control_graph_id": "ctg:72fe4c0ddbdc443b92f2a008b2092b00:601307860240",
+        "triggering_process_graph_id": "pid:666e4ccfb8674d96bc5b2874b0b36642:1255286344583",
+        "sha256": "73f513d9e6cf48ed8a81388be38f8176",
+        "md5": "9041266b16004d8691ffcdc075d9d10e",
+        "parent_details": {
+          "parent_sha256": "8605083dcae34ab69c7eff08fb2aa557",
+          "parent_md5": "3177a304c3ca4c5095c14a6d572b1029",
+          "parent_cmdline": "svchost.exe -k netsvcs",
+          "parent_process_graph_id": "pid:8d6cb268324d471294056684663eb79a:1996103220317"
+        },
+        "pattern_disposition": 2048,
+        "pattern_disposition_details": {
+          "process_blocked": true,
+          "operation_blocked": false,
+          "quarantine_file": false
+        },
+        "rule_instance_id": "98",
+        "rule_instance_version": 3
+      }
+    ],
+    "email_sent": false,
+    "first_behavior": "2025-07-03T04:29:52.343974+00:00",
+    "last_behavior": "2025-07-03T04:29:52.343974+00:00",
+    "max_confidence": 100,
+    "max_severity": 10,
+    "max_severity_displayname": "Informational",
+    "show_in_ui": true,
+    "status": "new",
+    "hostinfo": {
+      "active_directory_dn_display": [
+        "Computers1"
+      ],
+      "domain": ""
+    },
+    "seconds_to_triaged": 0,
+    "seconds_to_resolved": 0,
+    "behaviors_processed": [
+      "pid:1dafb9ab690642bfa940a59c47721144:1511124278061:41004"
+    ],
+    "date_updated": "2025-07-03T04:29:52.343974+00:00"
+  },
+  {
+    "cid": "b980148d9742482d9fa18c3f42e3397e",
+    "created_timestamp": "2025-07-03T04:29:52.343974+00:00",
+    "detection_id": "ldt:18c25eadd08d484d81985930afef0b0b:601307860240",
+    "device": {
+      "device_id": "275e74201e1242549893fbd7c083ecb8",
+      "cid": "cb22efce23a745d8a7fd11ef0585a9e9",
+      "agent_load_flags": "1",
+      "agent_local_time": "2025-07-03T04:29:52.343974+00:00",
+      "agent_version": "7.24.19607.0",
+      "bios_manufacturer": "Dell Inc.",
+      "bios_version": "1.7.1",
+      "config_id_base": "65994767",
+      "config_id_build": "19607",
+      "config_id_platform": "3",
+      "external_ip": "125.21.240.2",
+      "hostname": "CORP-PC01",
+      "first_seen": "2025-07-03T04:29:52.343974+00:00",
+      "last_login_timestamp": "2025-07-03T04:29:52.343974+00:00",
+      "last_login_user": "admin",
+      "last_seen": "2025-07-03T04:29:52.343974+00:00",
+      "local_ip": "192.168.1.47",
+      "mac_address": "1b:46:df:f2:94:59",
+      "machine_domain": "india.xyz.abc",
+      "major_version": "10",
+      "minor_version": "0",
+      "os_version": "Windows 11",
+      "ou": [
+        "Computers1"
+      ],
+      "platform_id": "0",
+      "platform_name": "Windows",
+      "product_type": "1",
+      "product_type_desc": "Workstation",
+      "site_name": "Noida",
+      "status": "normal",
+      "system_manufacturer": "Dell Inc.",
+      "system_product_name": "Latitude 3400",
+      "groups": [
+        "6e4d6e29e7f8488ca656407e39301cda"
+      ],
+      "modified_timestamp": "2025-07-03T04:29:52.343974+00:00"
+    },
+    "behaviors": [
+      {
+        "device_id": "95a0a380ef044398b4a1c1f2505a3a72",
+        "timestamp": "2025-07-03T04:29:52.343974+00:00",
+        "template_instance_id": "98",
+        "behavior_id": "41004",
+        "filename": "rundll32.exe",
+        "filepath": "C:\\Program Files\\rundll32.exe",
+        "alleged_filetype": "exe",
+        "cmdline": "C:\\Program Files\\rundll32.exe /run",
+        "scenario": "suspicious_activity",
+        "objective": "Falcon Detection Method",
+        "tactic": "Custom Intelligence",
+        "tactic_id": "CSTA0005",
+        "technique": "Indicator of Attack",
+        "technique_id": "CST0004",
+        "display_name": "CustomIOAWinLowest",
+        "description": "A process triggered an informational severity custom rule.",
+        "severity": 9,
+        "confidence": 90,
+        "ioc_type": "hash_sha256",
+        "ioc_value": "9226b8d912ba42b7a66f85d96eb9ac75",
+        "ioc_source": "library_load",
+        "ioc_description": "Suspicious execution of rundll32.exe",
+        "user_name": "admin",
+        "user_id": "S-1-5-6831223805",
+        "control_graph_id": "ctg:5d6368ac288c454a85c1fca70a5dabab:601307860240",
+        "triggering_process_graph_id": "pid:c5a866e3b9524cdbbd16bbc0f71aaae1:1790802294870",
+        "sha256": "65858053fc0d40ecbc9dd56c2d07a00c",
+        "md5": "bc79967723e94ea8a437d92b104dfb70",
+        "parent_details": {
+          "parent_sha256": "88e5eeb07a3f4f1eafc9e51e71e86a01",
+          "parent_md5": "cc9ea4a97007477289fbb69e5ec8a22f",
+          "parent_cmdline": "svchost.exe -k netsvcs",
+          "parent_process_graph_id": "pid:32bd95c536bb4951879e2b85ea30abac:1886484618262"
+        },
+        "pattern_disposition": 2048,
+        "pattern_disposition_details": {
+          "process_blocked": true,
+          "operation_blocked": false,
+          "quarantine_file": false
+        },
+        "rule_instance_id": "98",
+        "rule_instance_version": 3
+      }
+    ],
+    "email_sent": false,
+    "first_behavior": "2025-07-03T04:29:52.343974+00:00",
+    "last_behavior": "2025-07-03T04:29:52.343974+00:00",
+    "max_confidence": 100,
+    "max_severity": 10,
+    "max_severity_displayname": "Informational",
+    "show_in_ui": true,
+    "status": "new",
+    "hostinfo": {
+      "active_directory_dn_display": [
+        "Computers1"
+      ],
+      "domain": ""
+    },
+    "seconds_to_triaged": 0,
+    "seconds_to_resolved": 0,
+    "behaviors_processed": [
+      "pid:596c4b2282154a30ba018ddecb4391ed:1488066773795:41004"
+    ],
+    "date_updated": "2025-07-03T04:29:52.343974+00:00"
+  }
+]
